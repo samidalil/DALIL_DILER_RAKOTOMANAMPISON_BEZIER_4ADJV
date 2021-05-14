@@ -34,7 +34,7 @@ public class BezierCurve
 
     #endregion
 
-    #region Méthodes statiques
+    #region MÃ©thodes statiques
 
     public static void DrawElements()
     {
@@ -44,7 +44,7 @@ public class BezierCurve
 
     #endregion
 
-    #region Méthodes publiques
+    #region MÃ©thodes publiques
 
     public void Draws()
     {
@@ -64,7 +64,7 @@ public class BezierCurve
 
     #endregion
 
-    #region Méthodes privées
+    #region MÃ©thodes privÃ©es
 
     private void ComputeCurvePoints()
     {

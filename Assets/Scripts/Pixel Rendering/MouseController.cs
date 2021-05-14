@@ -7,28 +7,29 @@ using UnityEngine.EventSystems;
 public class MouseController : MonoBehaviour
 {
 
-    public Camera cam;
-
-
-    public GameObject testSphere;
+    public GameObject pointPrefab;
     private bool _click;
 
     public float zIndex;
 
-    
-
-
+    private Vector3 mousePoint;
+    private bool editMode = false;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            mousePoint = Input.mousePosition;
+            mousePoint.z = zIndex;
             // Check if the mouse was clicked over a UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                Vector3 position = Input.mousePosition;
+                if (!editMode)
+                {
+                    Vector3 position = Input.mousePosition;
 
-                position.z = zIndex;
-                Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
+                    position.z = zIndex;
+                    Instantiate(pointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity);
+                }
             }
         }
         

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class BezierManager : MonoBehaviour
 {
-
     private bool _isOnUi;
 
     private int _step = 1;

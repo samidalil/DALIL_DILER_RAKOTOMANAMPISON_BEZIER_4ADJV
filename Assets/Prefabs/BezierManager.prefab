@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2829886354848072415}
   - component: {fileID: 8851668379677441742}
+  - component: {fileID: 2196370924519199601}
   m_Layer: 0
   m_Name: BezierManager
   m_TagString: Untagged
@@ -43,3 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bdcbf290aede941995a5ea951c8af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2196370924519199601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853154547593737852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e4dfd319a98f049bd157370eb3c570, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPrefab: {fileID: 2041658490471032144, guid: 0921997781ff729448fba43fccf4c24f, type: 3}
+  zIndex: 3

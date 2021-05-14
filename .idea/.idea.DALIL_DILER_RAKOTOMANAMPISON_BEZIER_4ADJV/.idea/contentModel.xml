@@ -16,7 +16,6 @@
           </e>
           <e p="UI" t="Include">
             <e p="MenuManager.cs" t="Include" />
-            <e p="UIElement.cs" t="Include" />
           </e>
         </e>
       </e>

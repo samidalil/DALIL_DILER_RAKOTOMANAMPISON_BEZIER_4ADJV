@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
       </list>
     </option>
   </component>
@@ -41,6 +44,7 @@
       <updated>1620985054071</updated>
       <workItem from="1620985071742" duration="3528000" />
       <workItem from="1620996493777" duration="708000" />
+      <workItem from="1621014281817" duration="3177000" />
     </task>
     <servers />
   </component>

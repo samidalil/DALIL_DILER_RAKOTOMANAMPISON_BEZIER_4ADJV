@@ -7,7 +7,8 @@ public class BezierManager : MonoBehaviour
 {
 
     private bool _isOnUi;
-        
+
+    private int _step = 1;
     #region Singleton
 
     private static BezierManager _instance;
@@ -27,5 +28,11 @@ public class BezierManager : MonoBehaviour
     {
         get => _isOnUi;
         set => _isOnUi = value;
+    }
+
+    public int Step
+    {
+        get => _step;
+        set => _step = value;
     }
 }

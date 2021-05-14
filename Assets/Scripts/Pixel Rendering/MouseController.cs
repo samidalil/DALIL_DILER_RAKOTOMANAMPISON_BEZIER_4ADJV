@@ -53,8 +53,8 @@ public class MouseController : MonoBehaviour
         {
             Vector3 position = Input.mousePosition;
 
-            if (mode == Mode.NONE)
-                mousePoint = Input.mousePosition;
+            // if (mode == Mode.NONE)
+            //     mousePoint = Input.mousePosition;
             // Check if the mouse was clicked over a UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {

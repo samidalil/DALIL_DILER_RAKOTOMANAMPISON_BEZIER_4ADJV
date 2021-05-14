@@ -11,7 +11,7 @@ public class BezierCurve : MonoBehaviour
 
     #region Variables d'instance
 
-    public List<Point> Points = null;
+    public List<Point> Points = new List<Point>();
 
     public List<Vector3> Positions = new List<Vector3>();
 
@@ -39,6 +39,8 @@ public class BezierCurve : MonoBehaviour
         List<Point> points = this.Points;
         Vector3[,] arr = new Vector3[points.Count, points.Count];
         this.Positions.Clear();
+
+        if (points.Count == 0) return;
 
         for (int i = 0; i < points.Count; i++)
             arr[i, 0] = points[i].Position;

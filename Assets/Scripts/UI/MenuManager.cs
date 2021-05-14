@@ -6,15 +6,10 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-
     private BezierManager _bezierManager;
     private Mode mode;
     
     public Text stepValueTxt;
-    public GameObject bezierMenu;
-
-
-
     public Mode Mode => mode;
 
 
@@ -24,13 +19,13 @@ public class MenuManager : MonoBehaviour
         if (instance != null)
             Destroy(this);
         else instance = this;
+        BezierManager.Instance.MenuManager = this;
     }
 
     public static MenuManager Instance => instance;
 
     private void Start()
     {
-        BezierManager.Instance.MenuManager = this;
         SwitchToNoneMode();
         _bezierManager = BezierManager.Instance;
         stepValueTxt.text =  _bezierManager.Step.ToString();
@@ -50,13 +45,19 @@ public class MenuManager : MonoBehaviour
     public void SwitchToCreator()
     {
         mode = Mode.CREATION;
-        bezierMenu.SetActive(false);
+        Debug.Log("Set Curve");
+        BezierManager.Instance.CurrentCurve = Instantiate(
+            BezierManager.Instance.CurvePrefab,
+            Vector3.zero,
+            Quaternion.identity
+        ).GetComponent<BezierCurve>();
+        this.gameObject.SetActive(false);
     }
 
     public void setPosOfMenu(Vector3 position)
     {
-        bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
-        bezierMenu.SetActive(true);
+        this.gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+        this.gameObject.SetActive(true);
     }
 
 

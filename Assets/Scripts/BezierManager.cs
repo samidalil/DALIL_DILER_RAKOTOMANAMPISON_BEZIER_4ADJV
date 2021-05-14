@@ -19,12 +19,22 @@ public class BezierManager : MonoBehaviour
     }
 
     public static BezierManager Instance => BezierManager._instance;
-    
+
     #endregion
-    
+
+    #region Variables Unity
+
+    [SerializeField] private GameObject _curvePrefab = null;
+
+    [SerializeField] private GameObject _pointPrefab = null;
+
+    #endregion
+
     #region Variables d'instance
 
-    private int _step = 1;
+    private int _step = 50;
+
+    private BezierCurve _currentCurve = null;
 
     private MouseController _mouseController;
 
@@ -41,6 +51,16 @@ public class BezierManager : MonoBehaviour
         get => _step;
         set => _step = value;
     }
+
+    public BezierCurve CurrentCurve
+    {
+        get => this._currentCurve;
+        set => this._currentCurve = value;
+    }
+
+    public GameObject CurvePrefab => this._curvePrefab;
+    
+    public GameObject PointPrefab => this._pointPrefab;
 
     public MouseController MouseController
     {

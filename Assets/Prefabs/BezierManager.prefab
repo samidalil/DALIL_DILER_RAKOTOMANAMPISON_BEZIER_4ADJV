@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bdcbf290aede941995a5ea951c8af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _curvePrefab: {fileID: 8903881137646655683, guid: 50ba35f876d3f7848af4e0ed37785e95, type: 3}
+  _pointPrefab: {fileID: 2041658490471032144, guid: 0921997781ff729448fba43fccf4c24f, type: 3}
 --- !u!114 &2196370924519199601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,5 +58,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e4dfd319a98f049bd157370eb3c570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPrefab: {fileID: 2041658490471032144, guid: 0921997781ff729448fba43fccf4c24f, type: 3}
-  zIndex: 3

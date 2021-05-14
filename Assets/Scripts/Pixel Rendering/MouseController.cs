@@ -15,8 +15,6 @@ public enum Mode
 
 public class MouseController : MonoBehaviour
 {
-    public GameObject pointPrefab;
-    private bool _click;
     private MenuManager _menuManager;
 
     public static MouseController instance;
@@ -26,11 +24,11 @@ public class MouseController : MonoBehaviour
         if (instance != null)
             Destroy(this);
         else instance = this;
+        BezierManager.Instance.MouseController = this;
     }
 
     public void Start()
     {
-        BezierManager.Instance.MouseController = this;
         _menuManager = BezierManager.Instance.MenuManager;
     }
     
@@ -46,14 +44,25 @@ public class MouseController : MonoBehaviour
             // Check if the mouse was clicked over a UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                _menuManager.setPosOfMenu(position);
-            }
-            else if (_menuManager.Mode == Mode.CREATION)
-            {
                 // Check if the mouse was clicked over a UI element
-                if (!EventSystem.current.IsPointerOverGameObject())
+                if (_menuManager.Mode == Mode.NONE)
                 {
-                    Instantiate(pointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity);
+                    _menuManager.setPosOfMenu(position);
+                }
+                else if (_menuManager.Mode == Mode.EDIT)
+                {
+                    // BOUGER LES POINTS ETC
+                }
+                else if (_menuManager.Mode == Mode.CREATION)
+                {
+                    position.z = 2;
+
+                    Point point = Instantiate(BezierManager.Instance.PointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity).GetComponent<Point>();
+
+                    Debug.Log(point);
+                    Debug.Log(BezierManager.Instance.CurrentCurve);
+                    point.transform.SetParent(BezierManager.Instance.CurrentCurve.transform);
+                    BezierManager.Instance.CurrentCurve.Points.Add(point);
                 }
             }
         }

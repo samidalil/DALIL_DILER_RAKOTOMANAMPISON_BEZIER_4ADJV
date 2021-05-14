@@ -26,11 +26,11 @@ public class MouseController : MonoBehaviour
         if (instance != null)
             Destroy(this);
         else instance = this;
+        BezierManager.Instance.MouseController = this;
     }
 
     public void Start()
     {
-        BezierManager.Instance.MouseController = this;
         _menuManager = BezierManager.Instance.MenuManager;
     }
     

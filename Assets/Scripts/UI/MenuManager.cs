@@ -24,13 +24,14 @@ public class MenuManager : MonoBehaviour
         if (instance != null)
             Destroy(this);
         else instance = this;
+        BezierManager.Instance.MenuManager = this;
     }
 
     public static MenuManager Instance => instance;
 
     private void Start()
     {
-        BezierManager.Instance.MenuManager = this;
+       
         SwitchToNoneMode();
         _bezierManager = BezierManager.Instance;
         stepValueTxt.text =  _bezierManager.Step.ToString();

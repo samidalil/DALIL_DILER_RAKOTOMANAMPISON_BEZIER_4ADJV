@@ -13,8 +13,8 @@ public class DragableObject : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
     void OnMouseDown()
-
     {
+        if (BezierManager.Instance.MenuManager.Mode == Mode.CREATION) return;
         var position = gameObject.transform.position;
         mZCoord = Camera.main.WorldToScreenPoint(
             position).z;
@@ -38,6 +38,7 @@ public class DragableObject : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (BezierManager.Instance.MenuManager.Mode == Mode.CREATION) return;
         transform.position = GetMouseAsWorldPoint() + mOffset;
     }
 

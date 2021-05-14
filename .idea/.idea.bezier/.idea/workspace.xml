@@ -40,8 +40,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/Point.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DragableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BezierManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620986841890</updated>
-      <workItem from="1620986864685" duration="15763000" />
+      <workItem from="1620986864685" duration="18980000" />
     </task>
     <servers />
   </component>

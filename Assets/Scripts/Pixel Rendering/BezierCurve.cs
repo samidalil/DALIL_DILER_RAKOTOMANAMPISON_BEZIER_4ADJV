@@ -14,6 +14,21 @@ public class BezierCurve : MonoBehaviour
     public List<Point> Points = new List<Point>();
 
     public List<Vector3> Positions = new List<Vector3>();
+    
+    private int _degree = 3;
+    private int _step = 50; //TODO IMPLEMENT
+
+    public int Degree
+    {
+        get => _degree;
+        set => _degree = value;
+    }
+
+    public int Step
+    {
+        get => _step;
+        set => _step = value;
+    }
 
     #endregion
 

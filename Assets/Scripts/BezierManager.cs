@@ -44,7 +44,7 @@ public class BezierManager : MonoBehaviour
 
     #endregion
 
-    #region Propriétés
+    #region PropriÃ©tÃ©s
 
     public int Step
     {

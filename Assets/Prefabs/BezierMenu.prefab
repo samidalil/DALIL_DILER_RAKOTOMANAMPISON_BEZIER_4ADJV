@@ -182,7 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepValueTxt: {fileID: 8756720404689822531}
-  bezierMenu: {fileID: 8756720404329294964}
+  bezierCreationMenu: {fileID: 0}
+  degreeInput: {fileID: 8756720405454625970}
 --- !u!1 &8756720404592523683
 GameObject:
   m_ObjectHideFlags: 0

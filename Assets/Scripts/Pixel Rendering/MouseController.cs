@@ -6,12 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public enum Mode
-{
-    NONE = 0,
-    EDIT = 1,
-    CREATION = 2
-};
+
 
 public class MouseController : MonoBehaviour
 {
@@ -45,7 +40,7 @@ public class MouseController : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 // Check if the mouse was clicked over a UI element
-                if (_menuManager.Mode == Mode.NONE)
+                /*if (_menuManager.Mode == Mode.NONE)
                 {
                     _menuManager.setPosOfMenu(position);
                 }
@@ -53,16 +48,25 @@ public class MouseController : MonoBehaviour
                 {
                     // BOUGER LES POINTS ETC
                 }
-                else if (_menuManager.Mode == Mode.CREATION)
+                else */
+                if (_menuManager.Mode == Mode.CREATION)
                 {
                     position.z = 2;
 
                     Point point = Instantiate(BezierManager.Instance.PointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity).GetComponent<Point>();
 
-                    Debug.Log(point);
-                    Debug.Log(BezierManager.Instance.CurrentCurve);
                     point.transform.SetParent(BezierManager.Instance.CurrentCurve.transform);
                     BezierManager.Instance.CurrentCurve.Points.Add(point);
+                    if (BezierManager.Instance.CurrentCurve.Points.Count ==
+                        BezierManager.Instance.CurrentCurve.Degree + 1)
+                    {
+                        BezierManager.Instance.MenuManager.SwitchToEditMode();
+                        Debug.Log("switching to edit");
+                    }
+                }
+                else
+                {
+                    _menuManager.setPosOfMenu(position);
                 }
             }
         }

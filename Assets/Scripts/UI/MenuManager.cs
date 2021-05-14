@@ -8,36 +8,55 @@ public class MenuManager : MonoBehaviour
 {
 
     private BezierManager _bezierManager;
-    public Text stepValueTxt;
+    private Mode mode;
     
+    public Text stepValueTxt;
+    public GameObject bezierMenu;
+
+
+
+    public Mode Mode => mode;
+
+
+    private static MenuManager instance;
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(this);
+        else instance = this;
+    }
+
+    public static MenuManager Instance => instance;
+
     private void Start()
     {
-        
-        
+        BezierManager.Instance.MenuManager = this;
+        SwitchToNoneMode();
         _bezierManager = BezierManager.Instance;
         stepValueTxt.text =  _bezierManager.Step.ToString();
     }
 
-    public void OnCreatePoint()
+
+    public void SwitchToEditMode()
     {
-        
+        mode = Mode.EDIT;
     }
 
-    public void OnEditPoint()
+    public void SwitchToNoneMode()
     {
-        
+        mode = Mode.NONE;
+    }
+    
+    public void SwitchToCreator()
+    {
+        mode = Mode.CREATION;
+        bezierMenu.SetActive(false);
     }
 
-    public void OnPlusStep()
+    public void setPosOfMenu(Vector3 position)
     {
-        _bezierManager.Step += 1;
-        stepValueTxt.text =  _bezierManager.Step.ToString();
-    }
-
-    public void OnMinusStep()
-    {
-        BezierManager.Instance.Step -= 1;
-        stepValueTxt.text =  _bezierManager.Step.ToString();
+        bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
+        bezierMenu.SetActive(true);
     }
 
 

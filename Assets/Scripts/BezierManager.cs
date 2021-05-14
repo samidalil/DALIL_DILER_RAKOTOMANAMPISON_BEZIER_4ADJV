@@ -8,6 +8,10 @@ public class BezierManager : MonoBehaviour
     private bool _isOnUi;
 
     private int _step = 1;
+
+    private MouseController _mouseController;
+
+    private MenuManager _menuManager;
     #region Singleton
 
     private static BezierManager _instance;
@@ -33,5 +37,17 @@ public class BezierManager : MonoBehaviour
     {
         get => _step;
         set => _step = value;
+    }
+
+    public MouseController MouseController
+    {
+        get => _mouseController;
+        set => _mouseController = value;
+    }
+
+    public MenuManager MenuManager
+    {
+        get => _menuManager;
+        set => _menuManager = value;
     }
 }

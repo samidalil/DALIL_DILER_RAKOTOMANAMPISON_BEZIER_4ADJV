@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MouseController : MonoBehaviour
 {
@@ -12,16 +14,24 @@ public class MouseController : MonoBehaviour
     private bool _click;
 
     public float zIndex;
-    // Update is called once per frame
-    void Update()
+
+    
+
+
+    private void Update()
     {
-        _click = Input.GetMouseButtonDown(0);
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                Vector3 position = Input.mousePosition;
 
-        if (BezierManager.Instance.IsOnUi || !_click) return;
-        Vector3 position = Input.mousePosition;
-
-        position.z = zIndex;
-        Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
+                position.z = zIndex;
+                Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
+            }
+        }
+        
     }
 }
 

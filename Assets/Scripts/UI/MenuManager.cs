@@ -8,15 +8,12 @@ public class MenuManager : MonoBehaviour
 {
 
     private BezierManager _bezierManager;
-    public MouseController mController;
     public Text stepValueTxt;
-    public Text zValueTxt;
     
     private void Start()
     {
         _bezierManager = BezierManager.Instance;
         stepValueTxt.text =  _bezierManager.Step.ToString();
-        zValueTxt.text =  mController.zIndex.ToString("#.0");
     }
 
     public void OnCreatePoint()
@@ -41,15 +38,5 @@ public class MenuManager : MonoBehaviour
         stepValueTxt.text =  _bezierManager.Step.ToString();
     }
 
-    public void OnPlusZ()
-    {
-        mController.zIndex += .5f;
-        zValueTxt.text = mController.zIndex.ToString("#.0");
-    }
 
-    public void OnMinusZ()
-    {
-        mController.zIndex -= .5f;
-        zValueTxt.text =  mController.zIndex.ToString("#.0");
-    }
 }

@@ -1,37 +1,44 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BezierManager : MonoBehaviour
 {
-    private bool _isOnUi;
-
-    private int _step = 1;
     #region Singleton
 
     private static BezierManager _instance;
+    
     private void Awake()
     {
-        if (_instance != null)
-            Destroy(this);
-        else
-            _instance = this;
+        if (BezierManager._instance != null) Destroy(this);
+        else BezierManager._instance = this;
     }
 
-    public static BezierManager Instance => _instance;
+    private void OnDestroy()
+    {
+        if (BezierManager._instance == this) BezierManager._instance = null;
+    }
+
+    public static BezierManager Instance => BezierManager._instance;
+    
+    #endregion
+    
+    #region Variables d'instance
+
+    private int _step = 1;
+
+    private readonly List<BezierCurve> _curves = new List<BezierCurve>();
+
     #endregion
 
-
-    public bool IsOnUi
-    {
-        get => _isOnUi;
-        set => _isOnUi = value;
-    }
+    #region Propriétés
 
     public int Step
     {
         get => _step;
         set => _step = value;
     }
+
+    public List<BezierCurve> Curves => this._curves;
+
+    #endregion
 }

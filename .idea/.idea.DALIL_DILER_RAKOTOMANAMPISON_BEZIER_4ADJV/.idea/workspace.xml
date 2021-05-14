@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620985054071</updated>
       <workItem from="1620985071742" duration="3528000" />
+      <workItem from="1620996493777" duration="708000" />
     </task>
     <servers />
   </component>

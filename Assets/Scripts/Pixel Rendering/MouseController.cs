@@ -19,6 +19,7 @@ public class MouseController : MonoBehaviour
     public GameObject bezierMenu;
     public Mode mode;
     public GameObject testSphere;
+    public GameObject pointPrefab;
     private bool _click;
 
     public void Start()
@@ -42,6 +43,8 @@ public class MouseController : MonoBehaviour
         mode = Mode.CREATION;
     }
 
+    private Vector3 mousePoint;
+    private bool editMode = false;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -49,6 +52,10 @@ public class MouseController : MonoBehaviour
             Vector3 position = Input.mousePosition;
             
             if (mode==Mode.NONE)
+            mousePoint = Input.mousePosition;
+            mousePoint.z = zIndex;
+            // Check if the mouse was clicked over a UI element
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
                 bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
                 bezierMenu.SetActive(!bezierMenu.activeSelf);
@@ -59,8 +66,14 @@ public class MouseController : MonoBehaviour
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
                     
+                if (!editMode)
+                {
+                    Vector3 position = Input.mousePosition;
 
                     Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
+                }
+                    position.z = zIndex;
+                    Instantiate(pointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity);
                 }
             }
             

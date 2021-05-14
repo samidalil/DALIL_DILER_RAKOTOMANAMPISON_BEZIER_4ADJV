@@ -26,6 +26,10 @@ public class BezierManager : MonoBehaviour
 
     private int _step = 1;
 
+    private MouseController _mouseController;
+
+    private MenuManager _menuManager;
+
     private readonly List<BezierCurve> _curves = new List<BezierCurve>();
 
     #endregion
@@ -36,6 +40,18 @@ public class BezierManager : MonoBehaviour
     {
         get => _step;
         set => _step = value;
+    }
+
+    public MouseController MouseController
+    {
+        get => _mouseController;
+        set => _mouseController = value;
+    }
+
+    public MenuManager MenuManager
+    {
+        get => _menuManager;
+        set => _menuManager = value;
     }
 
     public List<BezierCurve> Curves => this._curves;

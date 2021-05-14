@@ -15,37 +15,25 @@ public enum Mode
 
 public class MouseController : MonoBehaviour
 {
-    public Camera cam;
-    public GameObject bezierMenu;
-    public Mode mode;
-    public GameObject testSphere;
     public GameObject pointPrefab;
     private bool _click;
+    private MenuManager _menuManager;
+
+    public static MouseController instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+            Destroy(this);
+        else instance = this;
+    }
 
     public void Start()
     {
-        switchToNoneMode();
+        BezierManager.Instance.MouseController = this;
+        _menuManager = BezierManager.Instance.MenuManager;
     }
-
-
-    public void switchToEditMode()
-    {
-        mode = Mode.EDIT;
-    }
-
-    public void switchToNoneMode()
-    {
-        mode = Mode.NONE;
-    }
-
-    public void switchToCreationMode()
-    {
-        mode = Mode.CREATION;
-        bezierMenu.SetActive(false);
-    }
-
-    private Vector3 mousePoint;
-    private bool editMode = false;
+    
 
     private void Update()
     {
@@ -58,18 +46,14 @@ public class MouseController : MonoBehaviour
             // Check if the mouse was clicked over a UI element
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
-                bezierMenu.SetActive(true);
+                _menuManager.setPosOfMenu(position);
             }
-            else if (mode == Mode.CREATION)
+            else if (_menuManager.Mode == Mode.CREATION)
             {
                 // Check if the mouse was clicked over a UI element
                 if (!EventSystem.current.IsPointerOverGameObject())
                 {
-                    if (!editMode)
-                    {
-                        Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
-                    }
+                    Instantiate(pointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity);
                 }
             }
         }

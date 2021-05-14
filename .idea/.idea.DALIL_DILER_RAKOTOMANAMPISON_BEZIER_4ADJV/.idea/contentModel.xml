@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BezierManager.cs" t="Include" />
+          <e p="DragableObject.cs" t="Include" />
           <e p="Pixel Rendering" t="Include">
             <e p="BezierCurve.cs" t="Include" />
             <e p="MouseController.cs" t="Include" />

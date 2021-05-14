@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-    </list>
+    <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620985054071</updated>
-      <workItem from="1620985071742" duration="971000" />
+      <workItem from="1620985071742" duration="1581000" />
     </task>
     <servers />
   </component>

@@ -7,12 +7,17 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="BezierManager.cs" t="Include" />
           <e p="Pixel Rendering" t="Include">
             <e p="BezierCurve.cs" t="Include" />
             <e p="Emitter.cs" t="Include" />
+            <e p="MouseController.cs" t="Include" />
             <e p="Point.cs" t="Include" />
             <e p="Polygon.cs" t="Include" />
             <e p="PolygonEditor.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="UIElement.cs" t="Include" />
           </e>
         </e>
       </e>

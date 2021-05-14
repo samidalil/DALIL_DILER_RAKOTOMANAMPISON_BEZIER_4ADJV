@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     
     public Text stepValueTxt;
     public GameObject bezierMenu;
+    public GameObject bezierCreationMenu;
 
 
 
@@ -46,6 +47,8 @@ public class MenuManager : MonoBehaviour
     public void SwitchToNoneMode()
     {
         mode = Mode.NONE;
+        bezierCreationMenu.SetActive(false);
+
     }
     
     public void SwitchToCreator()
@@ -56,8 +59,16 @@ public class MenuManager : MonoBehaviour
 
     public void setPosOfMenu(Vector3 position)
     {
-        bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
-        bezierMenu.SetActive(true);
+        if (mode == Mode.NONE)
+        {
+            bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
+            bezierMenu.SetActive(true);
+        }
+        else if (mode == Mode.CREATION)
+        {
+            bezierCreationMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
+            bezierCreationMenu.SetActive(true);
+        }
     }
 
 

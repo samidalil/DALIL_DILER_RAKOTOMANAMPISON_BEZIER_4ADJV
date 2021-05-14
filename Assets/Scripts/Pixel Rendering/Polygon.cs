@@ -1,42 +1,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class Polygon : Emitter
+public class Polygon
 {
-    #region Variables Unity
+    #region Variables statiques
 
-    [SerializeField]
-    private List<Point> _points;
+    public static List<Polygon> Elements = new List<Polygon>();
 
     #endregion
 
-    #region Propriétés
+    #region Variables d'instance
 
-    public List<Point> Points
+    public List<Point> Points;
+
+    #endregion
+
+    #region Constructeurs et destructeur
+
+    public Polygon()
     {
-        get => this._points;
-        set
-        {
-            if (this._points != null)
-                foreach (Point p in this._points)
-                    p.Off("PositionChange", this.OnPositionChange);
+        Polygon.Elements.Add(this);
+        this.Points = new List<Point>();
+    }
 
-            this._points = value;
+    public Polygon(List<Point> points)
+    {
+        Polygon.Elements.Add(this);
+        this.Points = points;
+    }
 
-            if (this._points != null)
-                foreach (Point p in this._points)
-                    p.On("PositionChange", this.OnPositionChange);
-
-            this.Emit("NewPoints");
-        }
+    ~Polygon()
+    {
+        Polygon.Elements.Remove(this);
     }
 
     #endregion
 
-    #region Fonctions Unity
+    #region Méthodes statiques
 
-    private void OnDrawGizmos()
+    public static void DrawElements()
+    {
+        foreach (Polygon element in Polygon.Elements)
+            element.Draw();
+    }
+
+    #endregion
+
+    #region Méthodes publiques
+
+    public virtual void Draw()
     {
         if (this.Points.Count > 2)
         {
@@ -46,15 +58,6 @@ public class Polygon : Emitter
                 Gizmos.DrawLine(this.Points[i].Position, this.Points[i + 1].Position);
             Gizmos.DrawLine(this.Points[this.Points.Count - 1].Position, this.Points[0].Position);
         }
-    }
-
-    #endregion
-
-    #region Fonctions privées
-
-    private void OnPositionChange()
-    {
-        this.Emit("PositionChange");
     }
 
     #endregion

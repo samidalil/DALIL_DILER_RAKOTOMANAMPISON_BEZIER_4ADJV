@@ -9,10 +9,11 @@ public class MenuManager : MonoBehaviour
 
     private BezierManager _bezierManager;
     public Text stepValueTxt;
-
+    
     private void Start()
     {
         _bezierManager = BezierManager.Instance;
+        stepValueTxt.text =  _bezierManager.Step.ToString();
     }
 
     public void OnCreatePoint()
@@ -36,4 +37,6 @@ public class MenuManager : MonoBehaviour
         BezierManager.Instance.Step -= 1;
         stepValueTxt.text =  _bezierManager.Step.ToString();
     }
+
+
 }

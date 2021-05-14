@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
       </list>
     </option>
   </component>
@@ -38,7 +40,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620985054071</updated>
-      <workItem from="1620985071742" duration="971000" />
+      <workItem from="1620985071742" duration="3528000" />
+      <workItem from="1620996493777" duration="708000" />
+      <workItem from="1621014281817" duration="4076000" />
     </task>
     <servers />
   </component>
@@ -47,5 +51,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="219" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621017391763">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="219" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1621017391763" />
   </component>
 </project>

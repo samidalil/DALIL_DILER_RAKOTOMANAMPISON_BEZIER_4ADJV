@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5558507470034068515}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4177343613653612524}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OnPlusStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5558507470058123235
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +224,6 @@ GameObject:
   - component: {fileID: 5558507470077970607}
   - component: {fileID: 5558507470077970600}
   - component: {fileID: 5558507470077970601}
-  - component: {fileID: 5558507470077970602}
   m_Layer: 5
   m_Name: 'Creation Mode '
   m_TagString: Untagged
@@ -321,19 +332,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5558507470077970600}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5558507470077970602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558507470077970644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703ce9da83b26c74fbcbd8a543830809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 4177343613653612524}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OnCreatePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5558507470767256662
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +358,7 @@ GameObject:
   - component: {fileID: 5558507470767256619}
   - component: {fileID: 5558507470767256618}
   - component: {fileID: 5558507470767256617}
+  - component: {fileID: 4177343613653612524}
   m_Layer: 5
   m_Name: menu
   m_TagString: Untagged
@@ -485,6 +497,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4177343613653612524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558507470767256662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46886877037b5304abdd26aacab2b258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepValueTxt: {fileID: 5558507470959316587}
 --- !u!1 &5558507470775939301
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +522,6 @@ GameObject:
   - component: {fileID: 5558507470775939320}
   - component: {fileID: 5558507470775939321}
   - component: {fileID: 5558507470775939322}
-  - component: {fileID: 5558507470775939323}
   m_Layer: 5
   m_Name: Edit Mode
   m_TagString: Untagged
@@ -606,19 +630,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5558507470775939321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5558507470775939323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558507470775939301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703ce9da83b26c74fbcbd8a543830809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls:
+      - m_Target: {fileID: 4177343613653612524}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OnEditPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5558507470899861649
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +763,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5558507470899861654}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4177343613653612524}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: OnMinusStep
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5558507470959316885
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,7 +948,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5558507471413651230}
   - component: {fileID: 5558507471413651228}
-  - component: {fileID: 5558507471413651229}
   m_Layer: 5
   m_Name: 'pannel step '
   m_TagString: Untagged
@@ -968,18 +1003,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5558507471413651229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5558507471413651231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703ce9da83b26c74fbcbd8a543830809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5558507471662289840
 GameObject:
   m_ObjectHideFlags: 0

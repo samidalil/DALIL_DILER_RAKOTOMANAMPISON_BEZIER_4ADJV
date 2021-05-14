@@ -10,6 +10,8 @@ public class MouseController : MonoBehaviour
 
     public GameObject testSphere;
     private bool _click;
+
+    public float zIndex;
     // Update is called once per frame
     void Update()
     {
@@ -18,7 +20,7 @@ public class MouseController : MonoBehaviour
         if (BezierManager.Instance.IsOnUi || !_click) return;
         Vector3 position = Input.mousePosition;
 
-        position.z = 3;
+        position.z = zIndex;
         Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
     }
 }

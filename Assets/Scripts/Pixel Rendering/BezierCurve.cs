@@ -1,64 +1,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BezierCurve
+public class BezierCurve : MonoBehaviour
 {
     #region Variables Unity
 
-    public static int Step = 30;
-
-    public static List<BezierCurve> Elements = new List<BezierCurve>();
+    [SerializeField] private LineRenderer _lineRenderer = null;
 
     #endregion
 
     #region Variables d'instance
 
-    public Polygon ControlPolygon;
+    public List<Point> Points = null;
 
     public List<Vector3> Positions = new List<Vector3>();
 
     #endregion
 
-    #region Constructeur
-    
-    public BezierCurve(Polygon controlPolygon)
-    {
-        BezierCurve.Elements.Add(this);
-        this.ControlPolygon = controlPolygon;
-    }
-
-    ~BezierCurve()
-    {
-        BezierCurve.Elements.Remove(this);
-    }
-
-    #endregion
-
-    #region Méthodes statiques
-
-    public static void DrawElements()
-    {
-        foreach (BezierCurve element in BezierCurve.Elements)
-            element.Draw();
-    }
-
-    #endregion
-
     #region Méthodes publiques
 
-    public void Draws()
+    public void FixedUpdate()
     {
         this.ComputeCurvePoints();
-    }
-
-    public void Draw()
-    {
+        
         if (this.Positions.Count > 1)
         {
-            Gizmos.color = Color.white;
-
-            for (int i = 0; i < this.Positions.Count - 1; i++)
-                Gizmos.DrawLine(this.Positions[i], this.Positions[i + 1]);
+            this._lineRenderer.SetPositions(this.Positions.ToArray());
+            this._lineRenderer.positionCount = this.Positions.Count;
         }
     }
 
@@ -68,20 +36,20 @@ public class BezierCurve
 
     private void ComputeCurvePoints()
     {
-        List<Point> points = this.ControlPolygon.Points;
+        List<Point> points = this.Points;
         Vector3[,] arr = new Vector3[points.Count, points.Count];
         this.Positions.Clear();
 
         for (int i = 0; i < points.Count; i++)
             arr[i, 0] = points[i].Position;
 
-        for (int n = 0; n <= BezierCurve.Step; n++)
+        for (int n = 0; n <= BezierManager.Instance.Step; n++)
         {
-            float t = (float) n / BezierCurve.Step;
+            float t = (float) n / BezierManager.Instance.Step;
 
             if (n == 0)
                 this.Positions.Add(points[0].Position);
-            else if (n == BezierCurve.Step)
+            else if (n == BezierManager.Instance.Step)
                 this.Positions.Add(points[points.Count - 1].Position);
             else
             {

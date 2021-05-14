@@ -19,7 +19,7 @@ public class BezierCurve : MonoBehaviour
 
     #endregion
 
-    #region Propriétés
+    #region Proprietes
 
     public Polygon ControlPolygon
     {
@@ -64,7 +64,7 @@ public class BezierCurve : MonoBehaviour
 
     #endregion
 
-    #region Fonctions privées
+    #region Fonctions privÃ©es
 
     private void ComputeCurvePoints()
     {

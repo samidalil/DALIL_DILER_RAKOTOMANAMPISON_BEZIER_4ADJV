@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour
     private Mode mode;
     
     public Text stepValueTxt;
+    public GameObject bezierCreationMenu;
+
     public Mode Mode => mode;
 
 
@@ -40,12 +42,13 @@ public class MenuManager : MonoBehaviour
     public void SwitchToNoneMode()
     {
         mode = Mode.NONE;
+        bezierCreationMenu.SetActive(false);
+
     }
     
     public void SwitchToCreator()
     {
         mode = Mode.CREATION;
-        Debug.Log("Set Curve");
         BezierManager.Instance.CurrentCurve = Instantiate(
             BezierManager.Instance.CurvePrefab,
             Vector3.zero,
@@ -56,8 +59,16 @@ public class MenuManager : MonoBehaviour
 
     public void setPosOfMenu(Vector3 position)
     {
-        this.gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
-        this.gameObject.SetActive(true);
+        if (mode == Mode.NONE)
+        {
+            this.gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+            this.gameObject.SetActive(true);
+        }
+        else if (mode == Mode.CREATION)
+        {
+            bezierCreationMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
+            bezierCreationMenu.SetActive(true);
+        }
     }
 
 

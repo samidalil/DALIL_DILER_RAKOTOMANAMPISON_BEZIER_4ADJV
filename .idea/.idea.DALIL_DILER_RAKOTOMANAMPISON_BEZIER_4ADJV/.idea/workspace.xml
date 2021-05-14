@@ -54,4 +54,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="219" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1621017391763">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="219" y="78" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1621017391763" />
+  </component>
 </project>

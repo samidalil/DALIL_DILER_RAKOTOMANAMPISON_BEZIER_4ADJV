@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     
     private void Start()
     {
+        
+        
         _bezierManager = BezierManager.Instance;
         stepValueTxt.text =  _bezierManager.Step.ToString();
     }

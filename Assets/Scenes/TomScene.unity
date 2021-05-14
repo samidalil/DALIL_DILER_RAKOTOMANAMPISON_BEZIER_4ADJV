@@ -590,6 +590,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1179825229}
     m_Modifications:
+    - target: {fileID: 7032470743937292465, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_Text
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032470743937292465, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032470743937292465, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7032470744161846172, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
       propertyPath: m_Name
       value: BezierMenu
@@ -856,6 +868,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1394214951}
+    - target: {fileID: 2196370924519199601, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2196370924519199601, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
       propertyPath: bezierMenu
       value: 

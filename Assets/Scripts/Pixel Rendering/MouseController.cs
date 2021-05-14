@@ -15,14 +15,11 @@ public class MouseController : MonoBehaviour
     {
         _click = Input.GetMouseButtonDown(0);
 
-        if (_click)
-        {
-            Vector3 position = Input.mousePosition;
+        if (BezierManager.Instance.IsOnUi || !_click) return;
+        Vector3 position = Input.mousePosition;
 
-            position.z = 3;
-            Debug.Log(cam.ScreenToWorldPoint(position));
-            Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
-        }
+        position.z = 3;
+        Instantiate(testSphere, cam.ScreenToWorldPoint(position), Quaternion.identity);
     }
 }
 

@@ -512,6 +512,7 @@ MonoBehaviour:
   bezierMenu: {fileID: 1597740941}
   mode: 0
   testSphere: {fileID: 679490212}
+  pointPrefab: {fileID: 0}
 --- !u!81 &1394214950
 AudioListener:
   m_ObjectHideFlags: 0
@@ -783,7 +784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -797,6 +802,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 7710584509016313511}
+    - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -818,6 +827,10 @@ PrefabInstance:
       value: MouseController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032470744716918627, guid: 1c2c8b99187d17c4d9cc616b509d7f90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: 
       objectReference: {fileID: 0}
@@ -835,6 +848,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2196370924519199601, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1394214951}
+    - target: {fileID: 2196370924519199601, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
+      propertyPath: bezierMenu
+      value: 
+      objectReference: {fileID: 1597740941}
+    - target: {fileID: 2196370924519199601, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
+      propertyPath: testSphere
+      value: 
+      objectReference: {fileID: 679490212}
     - target: {fileID: 2829886354848072415, guid: 40ad0781647c27d43bf2d8b91a171f8e, type: 3}
       propertyPath: m_RootOrder
       value: 4

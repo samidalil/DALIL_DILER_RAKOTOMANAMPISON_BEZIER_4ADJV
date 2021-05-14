@@ -41,6 +41,7 @@ public class MouseController : MonoBehaviour
     public void switchToCreationMode()
     {
         mode = Mode.CREATION;
+        bezierMenu.SetActive(false);
     }
 
     private Vector3 mousePoint;
@@ -58,7 +59,7 @@ public class MouseController : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 bezierMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
-                bezierMenu.SetActive(!bezierMenu.activeSelf);
+                bezierMenu.SetActive(true);
             }
             else if (mode == Mode.CREATION)
             {

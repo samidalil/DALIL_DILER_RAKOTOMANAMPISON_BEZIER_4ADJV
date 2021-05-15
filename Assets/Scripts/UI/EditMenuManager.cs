@@ -112,8 +112,12 @@ public class EditMenuManager : MonoBehaviour
 
     public void OnStepFieldChange()
     {
-        if (!ValidateInput(stepField.text)) return;
-        targetEdit.GetComponent<BezierCurve>().Step = int.Parse(stepField.text);
+        if (!ValidateInput(stepField.text) ) return;
+        int s = int.Parse(stepField.text);
+        if (s < 1) return;
+        targetEdit.GetComponent<BezierCurve>().Step = s;
+        
+        targetEdit.GetComponent<BezierCurve>().drawCurve();
     }
 
     #endregion

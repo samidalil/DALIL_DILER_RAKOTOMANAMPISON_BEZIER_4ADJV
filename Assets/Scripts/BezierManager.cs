@@ -54,11 +54,7 @@ public class BezierManager : MonoBehaviour
 
     #region Propriétés
 
-    public int Step
-    {
-        get => _step;
-        set => _step = value;
-    }
+   
 
     public BezierCurve CurrentCurve
     {

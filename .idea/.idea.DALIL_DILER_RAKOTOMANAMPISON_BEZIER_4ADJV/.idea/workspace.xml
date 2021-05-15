@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ea8b86-ef41-45dd-9efd-5626cf9fa184" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DALIL_DILER_RAKOTOMANAMPISON_BEZIER_4ADJV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BezierEditMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BezierEditMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Curve.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Curve.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TomScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +16,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
       </list>
     </option>
   </component>

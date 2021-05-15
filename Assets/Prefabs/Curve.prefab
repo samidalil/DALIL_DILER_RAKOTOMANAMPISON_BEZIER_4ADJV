@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 8903881137646655681}
   - component: {fileID: 8903881137646655682}
   - component: {fileID: -4208001209453434464}
-  - component: {fileID: 289090220427055444}
+  - component: {fileID: 4075523467876862383}
   m_Layer: 6
   m_Name: Curve
   m_TagString: Untagged
@@ -184,8 +184,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903881137646655683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.76}
+  m_LocalScale: {x: 2.5973, y: 2.5973, z: 2.5973}
   m_Children:
   - {fileID: 1649122825340940610}
   - {fileID: 8736948688774856435}
@@ -302,19 +302,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 8903881137646655682}
   _lineRendererHull: {fileID: 6411573148652904665}
+  _polygonCollider2D: {fileID: 4075523467876862383}
   Points: []
   ConvexHull: []
   Positions: []
---- !u!65 &289090220427055444
-BoxCollider:
+--- !u!60 &4075523467876862383
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903881137646655683}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}

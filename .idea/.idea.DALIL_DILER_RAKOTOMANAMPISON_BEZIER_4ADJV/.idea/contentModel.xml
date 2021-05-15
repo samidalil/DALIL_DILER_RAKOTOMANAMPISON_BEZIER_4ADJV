@@ -15,6 +15,7 @@
             <e p="Point.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="EditMenuManager.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
           </e>
         </e>

@@ -54,29 +54,34 @@ public class BezierCurve : MonoBehaviour
 
     public void Recompute()
     {
+        drawCurve();
+        this.ComputeConvexHull();
+
+        if (this.ConvexHull.Count > 1)
+        {
+            this._lineRendererHull.SetPositions(this.ConvexHull.ToArray());
+            this._lineRendererHull.positionCount = this.ConvexHull.Count;
+                
+            this.ConvexHull2D.Clear();
+            foreach (Vector3 v in this.ConvexHull)
+                this.ConvexHull2D.Add((Vector2)v);
+            this._polygonCollider2D.SetPath(0, this.ConvexHull2D);
+                
+        }
+        
+    }
+
+    public void drawCurve()
+    {
         this.ComputeCurvePoints();
         
         if (this.Positions.Count > 1)
         {
             this._lineRenderer.SetPositions(this.Positions.ToArray());
             this._lineRenderer.positionCount = this.Positions.Count;
-            
-            this.ComputeConvexHull();
-
-            if (this.ConvexHull.Count > 1)
-            {
-                this._lineRendererHull.SetPositions(this.ConvexHull.ToArray());
-                this._lineRendererHull.positionCount = this.ConvexHull.Count;
-                
-                this.ConvexHull2D.Clear();
-                foreach (Vector3 v in this.ConvexHull)
-                    this.ConvexHull2D.Add((Vector2)v);
-                this._polygonCollider2D.SetPath(0, this.ConvexHull2D);
-                
-            }
         }
-    }
 
+    }
     #endregion
 
     #region Méthodes privées
@@ -94,13 +99,13 @@ public class BezierCurve : MonoBehaviour
         for (int i = 0; i < this.Points.Count; i++)
             arr[i, 0] = this.Points[i].Position;
 
-        for (int n = 0; n <= BezierManager.Instance.Step; n++)
+        for (int n = 0; n <= Step; n++)
         {
-            float t = (float) n / BezierManager.Instance.Step;
+            float t = (float) n / Step;
 
             if (n == 0)
                 this.Positions.Add(this.Points[0].Position);
-            else if (n == BezierManager.Instance.Step)
+            else if (n == Step)
                 this.Positions.Add(this.Points[this.Points.Count - 1].Position);
             else
             {

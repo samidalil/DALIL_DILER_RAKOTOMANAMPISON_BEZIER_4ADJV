@@ -23,6 +23,8 @@ public class EditMenuManager : MonoBehaviour
     public InputField scaXField;
     public InputField scaYField;
     public InputField scaZField;
+    
+    public InputField stepField;
 
     private Transform targetTransform;
 
@@ -108,6 +110,16 @@ public class EditMenuManager : MonoBehaviour
         targetTransform.position = position;
     }
 
+    public void OnStepFieldChange()
+    {
+        if (!ValidateInput(stepField.text) ) return;
+        int s = int.Parse(stepField.text);
+        if (s < 1) return;
+        targetEdit.GetComponent<BezierCurve>().Step = s;
+        
+        targetEdit.GetComponent<BezierCurve>().drawCurve();
+    }
+
     #endregion
 
     #region RotationChange
@@ -184,8 +196,8 @@ public class EditMenuManager : MonoBehaviour
     public void OnExtend()
     {
         // Open Extend Panel avec degree = TargetEdit.Degree
-        // Dedans on choisit la stratégie et le degré
-        // Ensuite on fait ça
+        // Dedans on choisit la stratï¿½gie et le degrï¿½
+        // Ensuite on fait ï¿½a
         BezierCurve originCurve = this.targetEdit.GetComponent<BezierCurve>();
         BezierManager.Instance.CreateCurve(originCurve.Degree);
         BezierManager.Instance.ExtendCurve(originCurve, ExtendStrategy.C1);

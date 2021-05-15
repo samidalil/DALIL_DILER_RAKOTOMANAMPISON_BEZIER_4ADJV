@@ -77,8 +77,8 @@ public class MouseController : MonoBehaviour
             {
                 Vector3 position = Input.mousePosition;
                 Ray ray = Camera.main.ScreenPointToRay(position);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-                if (hit.collider != null)
+                RaycastHit hit;
+                if(Physics.Raycast(ray, out hit, 100.0f))
                 {
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Curve"))
                     {

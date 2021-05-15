@@ -188,7 +188,8 @@ public class EditMenuManager : MonoBehaviour
 
     public void OnDelete()
     {
-        //TODO no implem
+        BezierManager.Instance.Curves.Remove(targetEdit.GetComponent<BezierCurve>());
+        Destroy(targetEdit);
     }
     
 }

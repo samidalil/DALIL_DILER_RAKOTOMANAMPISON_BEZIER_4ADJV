@@ -12,7 +12,7 @@ public class MouseController : MonoBehaviour
 {
     private MenuManager _menuManager;
 
-    public static MouseController instance;
+    private static MouseController instance;
 
     private void Awake()
     {
@@ -66,7 +66,27 @@ public class MouseController : MonoBehaviour
                 }
                 else
                 {
-                    _menuManager.setPosOfMenu(position);
+                    _menuManager.SetPosOfMenu(position);
+                }
+            }
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+                        
+            if (!EventSystem.current.IsPointerOverGameObject())
+            {
+                Vector3 position = Input.mousePosition;
+                Ray ray = Camera.main.ScreenPointToRay(position);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+                    if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Curve"))
+                    {
+                        BezierManager.Instance.EditMenuManager.TargetEdit = hit.transform.gameObject;
+                        Debug.Log("clicked on curve");
+                        BezierManager.Instance.EditMenuManager.SetPosOfMenu(position);
+                    }
                 }
             }
         }

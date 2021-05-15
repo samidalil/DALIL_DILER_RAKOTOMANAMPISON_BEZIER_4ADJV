@@ -65,19 +65,13 @@ public class MenuManager : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void setPosOfMenu(Vector3 position)
+    public void SetPosOfMenu(Vector3 position)
     {
-        if (mode == Mode.EDIT)
-        {
-            this.gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
-            this.gameObject.SetActive(true);
-        }
-        else if (mode == Mode.CREATION)
-        {
-            bezierCreationMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
-            bezierCreationMenu.SetActive(true);
-        }
+
+        bezierCreationMenu.transform.SetPositionAndRotation(position, Quaternion.identity);
+        bezierCreationMenu.SetActive(true);
     }
+
 
 
 }

@@ -40,6 +40,14 @@ public class BezierManager : MonoBehaviour
 
     private MenuManager _menuManager;
 
+    private EditMenuManager _editMenuManager;
+
+    public EditMenuManager EditMenuManager
+    {
+        get => _editMenuManager;
+        set => _editMenuManager = value;
+    }
+
     private readonly List<BezierCurve> _curves = new List<BezierCurve>();
 
     #endregion

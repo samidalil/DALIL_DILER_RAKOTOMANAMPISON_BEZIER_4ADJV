@@ -58,7 +58,20 @@ public class MouseController : MonoBehaviour
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
                 }
                 else
-                    _menuManager.SetPosOfMenu(position);
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(position);
+                    RaycastHit hit;
+                    if (!Physics.Raycast(ray, out hit, 100.0f))
+                    {
+
+                        /*Debug.Log(hit.transform.gameObject.name);
+                        if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Curve") ||
+                            hit.transform.gameObject.layer == LayerMask.NameToLayer("Point")) return;
+                        */
+                        _menuManager.SetPosOfMenu(position);
+                    }
+         
+                }
             }
         }
         else if (Input.GetMouseButtonDown(1))
@@ -68,9 +81,10 @@ public class MouseController : MonoBehaviour
             {
                 Vector3 position = Input.mousePosition;
                 Ray ray = Camera.main.ScreenPointToRay(position);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-                if (hit.collider != null)
+                RaycastHit2D hit = Physics2D.GetRayIntersection(ray);
+                if(hit.collider != null)
                 {
+                    Debug.Log("hit " + hit.transform.gameObject.name);
                     if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Curve"))
                     {
                         BezierManager.Instance.EditMenuManager.TargetEdit = hit.transform.gameObject;

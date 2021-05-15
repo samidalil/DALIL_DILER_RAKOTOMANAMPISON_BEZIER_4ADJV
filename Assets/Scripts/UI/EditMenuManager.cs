@@ -33,7 +33,6 @@ public class EditMenuManager : MonoBehaviour
         {
             targetEdit = value;
             targetTransform = targetEdit.transform;
-
         } 
     }
 

@@ -85,4 +85,46 @@ public class BezierManager : MonoBehaviour
     public List<BezierCurve> Curves => this._curves;
 
     #endregion
+
+    #region Méthodes publiques
+
+    public Point CreatePointInCurve(Vector3 position)
+    {
+        Point point = GameObject.Instantiate(
+            this._pointPrefab,
+            Camera.main.ScreenToWorldPoint(position),
+            Quaternion.identity
+        ).GetComponent<Point>();
+
+        point.transform.SetParent(this._currentCurve.transform);
+        this._currentCurve.AddPoint(point);
+
+        return point;
+    }
+
+    public BezierCurve CreateCurve(int degree)
+    {
+        this._currentCurve = GameObject.Instantiate(
+            this._curvePrefab,
+            Vector3.zero,
+            Quaternion.identity
+        ).GetComponent<BezierCurve>();
+
+        this._currentCurve.Degree = degree;
+
+        return this._currentCurve;
+    }
+
+    public void ExtendCurve(BezierCurve originCurve, BezierCurve newCurve, ExtendStrategy strategy)
+    {
+        Point pn = originCurve.Points[originCurve.Points.Count - 1];
+        newCurve.AddPoint(pn);
+        if (strategy == ExtendStrategy.Continu) return;
+        Point pnm1 = originCurve.Points[originCurve.Points.Count - 2];
+        Point p1 = this.CreatePointInCurve(2 * pn.Position - pnm1.Position);
+        if (strategy == ExtendStrategy.C1 || originCurve.Degree == 1) return;
+        this.CreatePointInCurve(originCurve.Points[originCurve.Points.Count - 2].Position + 2 * (p1.Position - pnm1.Position));
+    }
+
+    #endregion
 }

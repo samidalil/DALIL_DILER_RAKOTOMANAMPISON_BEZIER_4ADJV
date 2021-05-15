@@ -183,7 +183,14 @@ public class EditMenuManager : MonoBehaviour
 
     public void OnExtend()
     {
-        //TODO no implem
+        // Open Extend Panel avec degree = TargetEdit.Degree
+        // Dedans on choisit la stratégie et le degré
+        // Ensuite on fait ça
+        BezierCurve originCurve = this.targetEdit.GetComponent<BezierCurve>();
+        BezierManager.Instance.ExtendCurve(originCurve, BezierManager.Instance.CreateCurve(originCurve.Degree), ExtendStrategy.C1);
+
+        if (BezierManager.Instance.CurrentCurve.Points.Count != BezierManager.Instance.CurrentCurve.Degree)
+            MenuManager.Instance.Mode = Mode.CREATION;
     }
 
     public void OnDelete()

@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649122825340940610
 Transform:
   m_ObjectHideFlags: 0
@@ -302,7 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 8903881137646655682}
   _lineRendererHull: {fileID: 6411573148652904665}
-  _polygonCollider2D: {fileID: 1239340955713143889}
+  Degree: 3
+  Step: 50
   Points: []
   ConvexHull: []
   Positions: []

@@ -53,21 +53,12 @@ public class MouseController : MonoBehaviour
                 {
                     position.z = 2;
 
-                    Point point = Instantiate(BezierManager.Instance.PointPrefab, Camera.main.ScreenToWorldPoint(position), Quaternion.identity).GetComponent<Point>();
-
-                    point.transform.SetParent(BezierManager.Instance.CurrentCurve.transform);
-                    BezierManager.Instance.CurrentCurve.AddPoint(point);
-                    if (BezierManager.Instance.CurrentCurve.Points.Count ==
-                        BezierManager.Instance.CurrentCurve.Degree + 1)
-                    {
+                    BezierManager.Instance.CreatePointInCurve(position);
+                    if (BezierManager.Instance.CurrentCurve.Points.Count == BezierManager.Instance.CurrentCurve.Degree + 1)
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
-                        Debug.Log("switching to edit");
-                    }
                 }
                 else
-                {
                     _menuManager.SetPosOfMenu(position);
-                }
             }
         }
         else if (Input.GetMouseButtonDown(1))

@@ -1,6 +1,12 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+
+public enum ExtendStrategy
+{
+    Continu,
+    C1,
+    C2,
+}
 
 public class BezierCurve : MonoBehaviour
 {
@@ -9,38 +15,32 @@ public class BezierCurve : MonoBehaviour
     [SerializeField] private LineRenderer _lineRenderer = null;
     [SerializeField] private LineRenderer _lineRendererHull = null;
     //[SerializeField] private PolygonCollider2D _polygonCollider2D = null;
+
     #endregion
 
     #region Variables d'instance
 
+    public int Degree = 3;
+
+    public int Step = 50; //TODO IMPLEMENT
+
     public List<Point> Points = new List<Point>();
-    //private List<Vector2> ConvexHull2D = new List<Vector2>();
+    
     public List<Vector3> ConvexHull = new List<Vector3>();
+
+    //public List<Vector2> ConvexHull2D = new List<Vector2>();
     
     public List<Vector3> Positions = new List<Vector3>();
-
-    private int _degree = 3;
-    private int _step = 50; //TODO IMPLEMENT
-
-    public int Degree
-    {
-        get => _degree;
-        set => _degree = value;
-    }
-
-    public int Step
-    {
-        get => _step;
-        set => _step = value;
-    }
 
     #endregion
 
     #region Méthodes publiques
 
-    public void AddPoint(Point p)
+    public void AddPoint(Point p, int i = -1)
     {
-        this.Points.Add(p);
+        if (i < 0) this.Points.Add(p);
+        else this.Points.Insert(i, p);
+
         p.OnPositionChanged += this.Recompute;
         this.Recompute();
     }
@@ -151,7 +151,8 @@ public class BezierCurve : MonoBehaviour
                     endpoint = p;
 
             pointOnHull = endpoint;
-        } while (endpoint != hull[0]);
+        }
+        while (endpoint != hull[0]);
 
         foreach (Point p in hull)
             this.ConvexHull.Add(p.Position);

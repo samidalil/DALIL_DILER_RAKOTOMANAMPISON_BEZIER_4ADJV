@@ -575,7 +575,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8474503473665905691}
+        m_TargetAssemblyTypeName: ExtendMenu, Assembly-CSharp
+        m_MethodName: OnComboBoxChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &4993898978279033834
 GameObject:
@@ -1155,7 +1167,7 @@ GameObject:
   - component: {fileID: 8756720404329294961}
   - component: {fileID: 8756720404329294963}
   - component: {fileID: 8756720404329294962}
-  - component: {fileID: 8756720404329294965}
+  - component: {fileID: 8474503473665905691}
   m_Layer: 5
   m_Name: ExtendMenu
   m_TagString: Untagged
@@ -1249,7 +1261,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8756720404329294965
+--- !u!114 &8474503473665905691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1258,10 +1270,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8756720404329294964}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46886877037b5304abdd26aacab2b258, type: 3}
+  m_Script: {fileID: 11500000, guid: d63463c361f08e44bb3e85017bf2a7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreeInput: {fileID: 8756720405454625970}
+  degreeField: {fileID: 8756720405454625970}
 --- !u!1 &8756720404592523683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1645,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8474503473665905691}
+        m_TargetAssemblyTypeName: ExtendMenu, Assembly-CSharp
+        m_MethodName: OnDegreeFieldChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -1845,9 +1869,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8756720404329294965}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: SwitchToCreator
+      - m_Target: {fileID: 8474503473665905691}
+        m_TargetAssemblyTypeName: ExtendMenu, Assembly-CSharp
+        m_MethodName: OnValidate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

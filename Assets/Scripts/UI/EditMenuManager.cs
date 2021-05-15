@@ -9,7 +9,7 @@ public class EditMenuManager : MonoBehaviour
     private GameObject targetEdit;
 
     public static EditMenuManager instance;
-
+    public GameObject extendMenu;
 
     public InputField posXField;
     public InputField posYField;
@@ -189,8 +189,10 @@ public class EditMenuManager : MonoBehaviour
     public void OnExtend()
     {
         BezierCurve originCurve = this.targetEdit.GetComponent<BezierCurve>();
-        BezierManager.Instance.CreateCurve(originCurve.Degree);
-        BezierManager.Instance.ExtendCurve(originCurve, ExtendStrategy.C1);
+        extendMenu.GetComponent<ExtendMenu>().degreeField.text = originCurve.Degree.ToString();
+        extendMenu.gameObject.SetActive(true);
+        // BezierManager.Instance.CreateCurve(originCurve.Degree);
+        // BezierManager.Instance.ExtendCurve(originCurve, ExtendStrategy.C1);
 
         if (BezierManager.Instance.CurrentCurve.Points.Count != BezierManager.Instance.CurrentCurve.Degree)
             MenuManager.Instance.Mode = Mode.CREATION;

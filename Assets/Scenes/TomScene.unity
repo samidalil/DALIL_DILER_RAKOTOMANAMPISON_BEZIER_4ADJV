@@ -137,23 +137,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062211794507253882, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1062211794507253882, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1062211794507253882, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 287.3222
       objectReference: {fileID: 0}
     - target: {fileID: 1062211794507253882, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 143.6611
       objectReference: {fileID: 0}
     - target: {fileID: 1062211794507253882, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -53.3987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785042427596425559, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466259166189882157, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466259166189882157, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8466259166189882157, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1545862325}
+    - target: {fileID: 8466259166189882157, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8756720404195695466, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -815,6 +835,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545862325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8756720404329294964, guid: 44833491c227c934ca5fda86ef19019e, type: 3}
+  m_PrefabInstance: {fileID: 30262635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1545862326 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8756720404329294960, guid: 44833491c227c934ca5fda86ef19019e, type: 3}

@@ -115,7 +115,7 @@ public class BezierManager : MonoBehaviour
         return this._currentCurve;
     }
 
-    public void ExtendCurve(BezierCurve originCurve, BezierCurve newCurve, ExtendStrategy strategy)
+    public void ExtendCurve(BezierCurve originCurve, ExtendStrategy strategy)
     {
         Point pn = originCurve.Points[originCurve.Points.Count - 1];
         this.CreatePointInCurve(originCurve.Points[originCurve.Points.Count - 1].Position);

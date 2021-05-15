@@ -69,8 +69,8 @@ public class BezierCurve : MonoBehaviour
                 this._lineRendererHull.positionCount = this.ConvexHull.Count;
                 
                 this.ConvexHull2D.Clear();
-                foreach (Vector3 vec in this.ConvexHull)
-                    this.ConvexHull2D.Add((Vector2)vec2);
+                foreach (Vector3 v in this.ConvexHull)
+                    this.ConvexHull2D.Add((Vector2)v);
                 this._polygonCollider2D.SetPath(0, this.ConvexHull2D);
                 
             }

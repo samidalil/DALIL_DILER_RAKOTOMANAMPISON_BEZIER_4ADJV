@@ -118,10 +118,12 @@ public class BezierManager : MonoBehaviour
     public void ExtendCurve(BezierCurve originCurve, BezierCurve newCurve, ExtendStrategy strategy)
     {
         Point pn = originCurve.Points[originCurve.Points.Count - 1];
-        newCurve.AddPoint(pn);
+        this.CreatePointInCurve(originCurve.Points[originCurve.Points.Count - 1].Position);
+
         if (strategy == ExtendStrategy.Continu) return;
         Point pnm1 = originCurve.Points[originCurve.Points.Count - 2];
         Point p1 = this.CreatePointInCurve(2 * pn.Position - pnm1.Position);
+        
         if (strategy == ExtendStrategy.C1 || originCurve.Degree == 1) return;
         this.CreatePointInCurve(originCurve.Points[originCurve.Points.Count - 2].Position + 2 * (p1.Position - pnm1.Position));
     }

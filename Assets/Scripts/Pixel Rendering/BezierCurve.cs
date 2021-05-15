@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BezierCurve : MonoBehaviour
@@ -7,13 +8,13 @@ public class BezierCurve : MonoBehaviour
 
     [SerializeField] private LineRenderer _lineRenderer = null;
     [SerializeField] private LineRenderer _lineRendererHull = null;
-
+    //[SerializeField] private PolygonCollider2D _polygonCollider2D = null;
     #endregion
 
     #region Variables d'instance
 
     public List<Point> Points = new List<Point>();
-
+    //private List<Vector2> ConvexHull2D = new List<Vector2>();
     public List<Vector3> ConvexHull = new List<Vector3>();
     
     public List<Vector3> Positions = new List<Vector3>();
@@ -66,6 +67,15 @@ public class BezierCurve : MonoBehaviour
             {
                 this._lineRendererHull.SetPositions(this.ConvexHull.ToArray());
                 this._lineRendererHull.positionCount = this.ConvexHull.Count;
+                /*
+                this.ConvexHull2D.Clear();
+                foreach (var vec in ConvexHull)
+                {
+                    Vector2 vec2 = vec;
+                    ConvexHull2D.Add(vec2);
+                }
+                this._polygonCollider2D.SetPath(0, this.ConvexHull2D);
+                */
             }
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EditMenuManager : MonoBehaviour
 {
 
-    public GameObject targetEdit;
+    private GameObject targetEdit;
     
     public static EditMenuManager instance;
 
@@ -26,6 +26,16 @@ public class EditMenuManager : MonoBehaviour
 
     private Transform targetTransform;
 
+    public GameObject TargetEdit
+    {
+        get => targetEdit;
+        set
+        {
+            targetEdit = value;
+            targetTransform = targetEdit.transform;
+        } 
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -37,8 +47,17 @@ public class EditMenuManager : MonoBehaviour
 
     private void Start()
     {
-        targetTransform = targetEdit.transform;
     }
+
+    public void SetPosOfMenu(Vector3 position)
+    {
+        if (MenuManager.Instance.Mode == Mode.EDIT)
+        {
+            this.gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+            this.gameObject.SetActive(true);
+        } 
+    }
+
 
     private bool ValidateInput(string input)
     {
@@ -169,7 +188,8 @@ public class EditMenuManager : MonoBehaviour
 
     public void OnDelete()
     {
-        //TODO no implem
+        BezierManager.Instance.Curves.Remove(targetEdit.GetComponent<BezierCurve>());
+        Destroy(targetEdit);
     }
     
 }

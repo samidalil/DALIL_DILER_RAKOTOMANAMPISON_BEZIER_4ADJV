@@ -382,6 +382,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1023615169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3398673751193803678, guid: 65de74282b700aa4aa9f26dfcea512db, type: 3}
+  m_PrefabInstance: {fileID: 8701697899889322942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179825225
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3398673751193803678, guid: 65de74282b700aa4aa9f26dfcea512db, type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: onStepFieldChange
+      value: OnStepFieldChange
       objectReference: {fileID: 0}
     - target: {fileID: 4277085535250409377, guid: 65de74282b700aa4aa9f26dfcea512db, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1117,6 +1128,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8701697899870561192, guid: 65de74282b700aa4aa9f26dfcea512db, type: 3}
+      propertyPath: stepField
+      value: 
+      objectReference: {fileID: 1023615169}
     - target: {fileID: 8701697899870561192, guid: 65de74282b700aa4aa9f26dfcea512db, type: 3}
       propertyPath: targetEdit
       value: 

@@ -37,7 +37,21 @@ public class BezierCurve : MonoBehaviour
 
     #region Méthodes publiques
 
-    public void FixedUpdate()
+    public void AddPoint(Point p)
+    {
+        this.Points.Add(p);
+        p.OnPositionChanged += this.Recompute;
+        this.Recompute();
+    }
+
+    public void RemovePoint(Point p)
+    {
+        this.Points.Remove(p);
+        p.OnPositionChanged -= this.Recompute;
+        this.Recompute();
+    }
+
+    public void Recompute()
     {
         this.ComputeCurvePoints();
         
@@ -45,14 +59,14 @@ public class BezierCurve : MonoBehaviour
         {
             this._lineRenderer.SetPositions(this.Positions.ToArray());
             this._lineRenderer.positionCount = this.Positions.Count;
-        }
+            
+            this.ComputeConvexHull();
 
-        this.ComputeConvexHull();
-
-        if (this.ConvexHull.Count > 1)
-        {
-            this._lineRendererHull.SetPositions(this.ConvexHull.ToArray());
-            this._lineRendererHull.positionCount = this.ConvexHull.Count;
+            if (this.ConvexHull.Count > 1)
+            {
+                this._lineRendererHull.SetPositions(this.ConvexHull.ToArray());
+                this._lineRendererHull.positionCount = this.ConvexHull.Count;
+            }
         }
     }
 

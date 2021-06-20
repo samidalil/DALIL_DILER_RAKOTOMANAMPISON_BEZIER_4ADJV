@@ -55,7 +55,10 @@ public class MouseController : MonoBehaviour
 
                     BezierManager.Instance.CreatePointInCurve(position);
                     if (BezierManager.Instance.CurrentCurve.Points.Count == BezierManager.Instance.CurrentCurve.Degree + 1)
+                    {
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
+                        DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);
+                    }
                 }
                 else
                 {

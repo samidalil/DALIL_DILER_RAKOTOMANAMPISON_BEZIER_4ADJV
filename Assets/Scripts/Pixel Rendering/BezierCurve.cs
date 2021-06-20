@@ -22,7 +22,7 @@ public class BezierCurve : MonoBehaviour
 
     public int Degree = 3;
 
-    public int Step = 50; //TODO IMPLEMENT
+    public int Step = 10; //TODO IMPLEMENT
 
     public List<Point> Points = new List<Point>();
     

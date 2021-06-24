@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class Extrusion : MonoBehaviour
 {
-    private Vector3 GetTangent(BezierCurve curve, int n)
+    public Vector3 GetNormalizedTangent(BezierCurve curve, int n)
     {
         Vector3 tangent;
-       
+
         if (n == 0)
             tangent = curve.Points[1].Position - curve.Points[0].Position;
         else if (n == curve.Positions.Count - 1)
@@ -24,7 +24,7 @@ public class Extrusion : MonoBehaviour
         return Mathf.Atan2(Vector3.Dot(v, right), Vector3.Dot(v, u)) * Mathf.Rad2Deg;
     }
 
-    private Vector3 RotatePoint(Vector3 point, float theta) 
+    private Vector3 RotatePoint(Vector3 point, float theta)
     {
         return new Vector3(
             point.x * Mathf.Cos(theta) + point.y * Mathf.Sin(theta),
@@ -33,35 +33,33 @@ public class Extrusion : MonoBehaviour
         );
     }
 
- 
+    
+    // Ã§a serait mieux de mettre en parametre de la fonction deux out
+    // l'un pour recuperer les vertices et l'autre pour les normales
+    // les normales N se calculent avec : N = P_normal cross (Xf(s)'*v + Yf(s)'*u)
     public List<Vector3> ExtrudeByPath(Vector3[] profile, BezierCurve curve)
     {
         List<Vector3> vertices = new List<Vector3>();
-        Vector3 originPoint = Vector3.zero;
-        Vector3 normal = Vector3.right;
+     //   Vector3 originPoint = Vector3.zero;
+        Vector3 P_v = curve.gameObject.transform.right.normalized; // abscisse du repere dans lequelle s'inscrit le plan
 
         for (int i = 0; i < curve.Positions.Count; i++)
         {
-            Vector3 tangent = this.GetTangent(curve, i);
-
+            Vector3 P_normal = this.GetNormalizedTangent(curve, i); // normal au plan P <=> tangente normalise au point A(t) 
+            Vector3 P_u = Vector3.Cross(P_normal, P_v); // ordonnee du repÃ¨re dans lequelle s'inscrit le plan
             foreach (Vector3 point in profile)
             {
-                /**
-                 * Il faut orienter le profil en fonction de sa normale d'origine (normal)
-                 * et de la tangente au point courant de la courbe de Bézier (tangent)
-                 * qui définit la nouvelle normale du plan de contenance du profil 2D
-                 * 
-                 * là on va rotate tout les points de la forme par rapport à son centre et de l'angle theta
-                 * On utilise les coordonées polaire pour cela ( cf. formule changement d'axes de coordonées https://fr.wikipedia.org/wiki/Rotation_plane)
-                 */
-
-                //vertices.Add(originPoint + curve.Positions[i] + this.RotatePoint(point, Vector3.SignedAngle(normal, tangent, Vector3.right)));
-                vertices.Add(originPoint + curve.Positions[i] + point);
+                Vector3 dx = point.x * P_v;
+                Vector3 dy = point.y * P_u;
+ 
+                // sigma(s,t) = A(t) + Xf(s)*v + Yf(s)*k 
+                // ou A(t) est le point de la bÃ©zier Ã  l'indice t
+                // et ( Xf(s), Yf(s) ) sont les coordonee du point F(s) appartenant au profile
+                // u et v sont les vecteurs formant la base du repere ( A(t), u , v ) dans laquelle se trouve le plan P
+                vertices.Add(curve.Positions[i] + dx + dy);
             }
         }
 
         return vertices;
     }
-
-
 }

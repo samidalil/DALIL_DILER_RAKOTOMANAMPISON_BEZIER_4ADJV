@@ -9,6 +9,10 @@ public class DebugManager : MonoBehaviour
     [SerializeField] private float _radius = .05f;
     [SerializeField] private Extrusion _extrusionManager = null;
     [SerializeField] private MeshDisplayer _meshDisplayer = null;
+    [SerializeField] private bool _showDebugPlaneTransform = true;
+    [SerializeField] private bool _showDebugProfile = true;
+    [SerializeField] private bool _showDebugProfileExtruded = true;
+    private Vector2[] _F;
     private BezierCurve _A;
 
     private List<Vector3> _vertices = new List<Vector3>();
@@ -25,54 +29,64 @@ public class DebugManager : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        // Gizmos.color = Color.red;
-        // foreach (Vector3 point in this._vertices)
-        //     Gizmos.DrawSphere(point, this._radius);
+        if(!Application.isPlaying) return;
 
-        for (int t = 0; t < _A.Positions.Count; t++)
+        // Display les ptite bouboule !!!!
+        if (_showDebugProfileExtruded)
         {
-            Vector3 N =  _extrusionManager.GetNormalizedTangent(_A, t);
+            Gizmos.color = Color.yellow;
+            foreach (Vector3 point in this._vertices)
+            {
+                Gizmos.DrawSphere(point, this._radius);
+            }
+        }
 
-            Vector3 v = _A.gameObject.transform.right.normalized;
-            Vector3 u = Vector3.Cross(N, v);
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawRay(_A.Positions[t], u);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawRay(_A.Positions[t], v);
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(_A.Positions[t], N);
+        if (_showDebugProfile)
+        {          
+            Gizmos.color = Color.magenta;
+            foreach (Vector3 point in _F)
+                Gizmos.DrawSphere(point, this._radius);
         }
         
-        
+        // Display les repere en chaque A(t)
+        if (_showDebugPlaneTransform)
+        {
+            for (int t = 0; t < _A.Positions.Count; t++)
+            {
+                Vector3 N = _extrusionManager.GetNormalizedTangent(_A, t);
+
+                Vector3 v = _A.gameObject.transform.right.normalized;
+                Vector3 u = AbsV3(Vector3.Cross(N, v)).normalized;
+
+                Gizmos.color = Color.green;
+                Gizmos.DrawRay(_A.Positions[t], u);
+                Gizmos.color = Color.blue;
+                Gizmos.DrawRay(_A.Positions[t], v);
+                Gizmos.color = Color.red;
+                Gizmos.DrawRay(_A.Positions[t], N);
+            }
+
+
+        }
     }
 
+    public Vector3 AbsV3 (Vector3 v) {
+        return new Vector3(Mathf.Abs(v.x), Mathf.Abs(v.y), Mathf.Abs(v.z));
+    }
     public void Extrude(BezierCurve curve)
     {
-        Vector3[] profile = new Vector3[]
+        Vector2[] profile = new Vector2[]
         {
-            new Vector3(0, 0, 0),
-            new Vector3(0, 0, 1),
-            new Vector3(0, 1, 1),
-            new Vector3(0, 1, 0),
+            new Vector2(0, 0),
+            new Vector2(0, 1),
+            new Vector2(1, 0),
+            new Vector2(1,1),
         };
         _A = curve;
-
+        _F = profile;
         this._vertices = this._extrusionManager.ExtrudeByPath(profile, curve);
+            
         Debug.Log("finished");
         this._meshDisplayer.Display(this._vertices.ToArray(), profile.Length);
-    }
-
-    /// <summary>
-    /// Display the extrusion plan at a point A(t).
-    /// It compute N, the plan normal, U and V the base vector of the repere ( A(t), u, v)
-    /// </summary>
-    /// <param name="curve">Bezier curve</param>
-    /// <param name="t">point index</param>
-    public void DisplayPlanAtPoint(BezierCurve curve, int t)
-    {
-        Vector3 N =  _extrusionManager.GetNormalizedTangent(curve, t);
-      
-
     }
 }

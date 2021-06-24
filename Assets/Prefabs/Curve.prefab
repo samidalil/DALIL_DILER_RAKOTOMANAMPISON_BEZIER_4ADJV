@@ -184,8 +184,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903881137646655683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.76}
-  m_LocalScale: {x: 2.5973, y: 2.5973, z: 2.5973}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1649122825340940610}
   - {fileID: 8736948688774856435}
@@ -304,7 +304,7 @@ MonoBehaviour:
   _lineRendererHull: {fileID: 6411573148652904665}
   _polygonCollider2D: {fileID: 4075523467876862383}
   Degree: 3
-  Step: 50
+  Step: 5
   Points: []
   ConvexHull: []
   ConvexHull2D: []

@@ -32,7 +32,7 @@ public class BezierManager : MonoBehaviour
 
     #region Variables d'instance
 
-    private int _step = 50;
+    private int _step = 5;
 
     private BezierCurve _currentCurve = null;
 

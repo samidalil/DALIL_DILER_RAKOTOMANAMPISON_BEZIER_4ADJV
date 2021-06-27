@@ -112,7 +112,7 @@ public class EditMenuManager : MonoBehaviour
         BezierCurve c = targetEdit.GetComponent<BezierCurve>();
         c.Step = s;
 
-        c.drawCurve();
+        c.DrawCurve();
     }
 
     #endregion

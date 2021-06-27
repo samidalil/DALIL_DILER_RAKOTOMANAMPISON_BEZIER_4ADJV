@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,12 @@ public enum ExtendStrategy
 
 public class BezierCurve : MonoBehaviour
 {
+    #region Evènements
+
+    public event Action OnRecompute;
+
+    #endregion
+
     #region Variables Unity
 
     [SerializeField] private LineRenderer _lineRenderer = null;
@@ -54,7 +61,7 @@ public class BezierCurve : MonoBehaviour
 
     public void Recompute()
     {
-        drawCurve();
+        this.DrawCurve();
         this.ComputeConvexHull();
 
         if (this.ConvexHull.Count > 1)
@@ -66,12 +73,12 @@ public class BezierCurve : MonoBehaviour
             foreach (Vector3 v in this.ConvexHull)
                 this.ConvexHull2D.Add((Vector2)v);
             this._polygonCollider2D.SetPath(0, this.ConvexHull2D);
-                
         }
-        
+
+        this.OnRecompute?.Invoke();
     }
 
-    public void drawCurve()
+    public void DrawCurve()
     {
         this.ComputeCurvePoints();
         

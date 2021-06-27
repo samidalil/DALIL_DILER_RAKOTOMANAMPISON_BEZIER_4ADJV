@@ -30,7 +30,7 @@ public class Point : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this._oldPosition != this.transform.position) OnPositionChanged?.Invoke();
+        if (this._oldPosition != this.transform.position) this.OnPositionChanged?.Invoke();
     }
 
     #endregion

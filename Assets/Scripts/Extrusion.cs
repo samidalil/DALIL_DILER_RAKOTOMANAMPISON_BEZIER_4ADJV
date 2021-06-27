@@ -17,23 +17,6 @@ public class Extrusion : MonoBehaviour
         return tangent.normalized;
     }
 
-    private float AngleBetween(Vector3 v, Vector3 u, Vector3 axis)
-    {
-        Vector3 right = Vector3.Cross(axis, u).normalized;
-        u = Vector3.Cross(right, axis).normalized;
-        return Mathf.Atan2(Vector3.Dot(v, right), Vector3.Dot(v, u)) * Mathf.Rad2Deg;
-    }
-
-    private Vector3 RotatePoint(Vector3 point, float theta)
-    {
-        return new Vector3(
-            point.x * Mathf.Cos(theta) + point.y * Mathf.Sin(theta),
-            -point.x * Mathf.Cos(theta) + point.y * Mathf.Sin(theta),
-            point.z
-        );
-    }
-
-
     // ça serait mieux de mettre en parametre de la fonction deux out
     // l'un pour recuperer les vertices et l'autre pour les normales
     // les normales N se calculent avec : N = P_normal cross (Xf(s)'*v + Yf(s)'*u)

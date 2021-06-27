@@ -58,6 +58,7 @@ public class MouseController : MonoBehaviour
                     {
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
                         DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);
+                        BezierManager.Instance.CurrentCurve.OnRecompute += () => DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);
                     }
                 }
                 else

@@ -1,16 +1,30 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class MeshDisplayer : MonoBehaviour
 {
+    #region Variables Unity
+
     [SerializeField] private MeshFilter _meshFilter = null;
+
+    #endregion
+
+    #region Fonctions Unity
+
+    private void Awake()
+    {
+        this._meshFilter.mesh = new Mesh();
+    }
+
+    #endregion
+
+    #region Fonctions publiques
 
     public void Display(Vector3[] vertices, int profileLength)
     {
-        Mesh mesh = new Mesh();
+        Mesh mesh = this._meshFilter.mesh;
 
-        this._meshFilter.mesh = mesh;
+        mesh.Clear();
 
         int bezierLength = vertices.Length / profileLength;
 
@@ -37,4 +51,6 @@ public class MeshDisplayer : MonoBehaviour
         mesh.SetVertices(vertices);
         mesh.SetIndices(indices.ToArray(), MeshTopology.Quads, 0);
     }
+
+    #endregion
 }

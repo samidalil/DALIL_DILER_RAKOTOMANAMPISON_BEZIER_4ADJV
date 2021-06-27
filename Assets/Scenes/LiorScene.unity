@@ -836,9 +836,8 @@ MonoBehaviour:
   _radius: 0.05
   _extrusionManager: {fileID: 1808771747}
   _meshDisplayer: {fileID: 603831135}
-  _showDebugPlaneTransform: 1
-  _showDebugProfile: 1
   _showDebugProfileExtruded: 1
+  _showDebugPlaneTransform: 1
 --- !u!4 &2061444155
 Transform:
   m_ObjectHideFlags: 0
@@ -1011,10 +1010,6 @@ PrefabInstance:
     - target: {fileID: 4312923396203134192, guid: 26a8a14943fa59445a07fc5d03fefc7e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4312923396203134199, guid: 26a8a14943fa59445a07fc5d03fefc7e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4312923396768461104, guid: 26a8a14943fa59445a07fc5d03fefc7e, type: 3}
       propertyPath: m_AnchorMax.y

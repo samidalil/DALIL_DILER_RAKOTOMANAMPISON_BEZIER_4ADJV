@@ -48,7 +48,7 @@ public class DebugManager : MonoBehaviour
             new Vector2(-1, 0),
         };*/
 
-        this._vertices = this._extrusionManager.ExtrudeByPath(profile, curve);
-        this._meshDisplayer.Display(this._vertices.ToArray(), profile.Length);
+        this._extrusionManager.ExtrudeByPath(profile, curve, out this._vertices, out this._normales);
+        this._meshDisplayer.Display(this._vertices.ToArray(), this._normales.ToArray(), profile.Length);
     }
 }

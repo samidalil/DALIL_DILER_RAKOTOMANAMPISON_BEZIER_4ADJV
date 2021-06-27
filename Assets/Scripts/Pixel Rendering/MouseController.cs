@@ -56,7 +56,6 @@ public class MouseController : MonoBehaviour
                     BezierManager.Instance.CreatePointInCurve(position);
                     if (BezierManager.Instance.CurrentCurve.Points.Count == BezierManager.Instance.CurrentCurve.Degree + 1)
                     {
-                        
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
                         ProfileMenuManager.Instance.ActivateMenu();
                     }
@@ -67,11 +66,16 @@ public class MouseController : MonoBehaviour
                     BezierManager.Instance.CreatePointProfile(position);
                     if (BezierManager.Instance.CurrentProfile.Count == BezierManager.Instance.ProfilePointNumber)
                     {
+                        if (BezierManager.Instance.ProfileMenuManager.ToggleVal)
+                            BezierManager.Instance.CurrentProfile.Add(BezierManager.Instance.CurrentProfile[0]);
 
+                        foreach (Point p in BezierManager.Instance.ProfilePoints)
+                            GameObject.Destroy(p.gameObject);
+                        BezierManager.Instance.ProfilePoints.Clear();
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
+                        BezierManager.Instance.CurrentProfile.Add(BezierManager.Instance.CurrentProfile[0]);
                         DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve, BezierManager.Instance.CurrentProfile.ToArray());
-                        /*DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);
-                        BezierManager.Instance.CurrentCurve.OnRecompute += () => DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);*/
+                        BezierManager.Instance.CurrentCurve.OnRecompute += () => DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve, BezierManager.Instance.CurrentProfile.ToArray());
                     }
                 }
                 else

@@ -15,6 +15,9 @@ public class ProfileMenuManager : MonoBehaviour
 
     private BezierManager _bezierManager;
     private MenuManager _menuManager;
+
+    public bool ToggleVal => this.toggleVal;
+
     #region Singleton
 
         private static ProfileMenuManager instance;
@@ -49,6 +52,8 @@ public class ProfileMenuManager : MonoBehaviour
             Debug.Log("invalid degree input");
             return;
         }
+
+        this._bezierManager.CurrentProfile.Clear();
 
         toggleVal = closedProfileToggle.isOn;
 

@@ -76,9 +76,8 @@ public class Extrusion : MonoBehaviour
                 vertices.Add(curve.Positions[i] + dx + dy);
                 
                 // N = T scalaire Xf'(s)v + Yf'(s)k*
-                Vector2 derive = GetNormalizedTangent(profile, index++);
+                Vector2 derive = this.GetNormalizedTangent(profile, index++);
                 normales.Add(Vector3.Cross(P_normal, derive.x * P_u + derive.y * P_v).normalized);
-
             }
         }
 

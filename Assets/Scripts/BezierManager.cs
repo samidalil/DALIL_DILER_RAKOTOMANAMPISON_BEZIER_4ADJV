@@ -42,12 +42,15 @@ public class BezierManager : MonoBehaviour
 
     private ProfileMenuManager _profileMenuManager;
     private EditMenuManager _editMenuManager;
+    private List<Point> _profilePoints = new List<Point>();
 
     public EditMenuManager EditMenuManager
     {
         get => _editMenuManager;
         set => _editMenuManager = value;
     }
+
+    public List<Point> ProfilePoints => this._profilePoints;
 
     private readonly List<BezierCurve> _curves = new List<BezierCurve>();
 
@@ -118,14 +121,17 @@ public class BezierManager : MonoBehaviour
 
     public void CreatePointProfile(Vector3 position)
     {
-        GameObject.Instantiate(
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(position);
+        Point point = GameObject.Instantiate(
             this._profilePointPrefab,
-            Camera.main.ScreenToWorldPoint(position),
+            worldPosition,
             Quaternion.identity
-        );
+        ).GetComponent<Point>();
 
-        this._currentProfile.Add(new Vector2(position.x, position.y));
+        this._profilePoints.Add(point);
 
+        point.transform.SetParent(this._currentCurve.transform);
+        this._currentProfile.Add(worldPosition);
     }
 
     public BezierCurve CreateCurve(int degree)

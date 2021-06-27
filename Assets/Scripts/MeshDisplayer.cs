@@ -6,7 +6,7 @@ public class MeshDisplayer : MonoBehaviour
 {
     [SerializeField] private MeshFilter _meshFilter = null;
 
-    public void Display(Vector3[] vertices, int profileLength)
+    public void Display(Vector3[] vertices,Vector3[] normales, int profileLength)
     {
         Mesh mesh = new Mesh();
 
@@ -35,6 +35,7 @@ public class MeshDisplayer : MonoBehaviour
         }
 
         mesh.SetVertices(vertices);
+        mesh.SetNormals(normales);
         mesh.SetIndices(indices.ToArray(), MeshTopology.Quads, 0);
     }
 }

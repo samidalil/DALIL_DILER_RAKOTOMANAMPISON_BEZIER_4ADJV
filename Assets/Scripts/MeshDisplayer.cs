@@ -14,11 +14,9 @@ public class MeshDisplayer : MonoBehaviour
 
         int bezierLength = vertices.Length / profileLength;
 
-        Debug.Log($"Bezier: {bezierLength}, Profile: {profileLength}, Vertices: {vertices.Length}");
-
         List<int> indices = new List<int>();
 
-        for (int i = 0; i < profileLength; i++)
+        for (int i = 0; i < profileLength - 1; i++)
         {
             for (int j = 0; j < bezierLength - 1; j++)
             {
@@ -35,9 +33,6 @@ public class MeshDisplayer : MonoBehaviour
                 indices.Add(i + (j + 1) * profileLength);
             }
         }
-
-        Debug.Log(indices.Max());
-
 
         mesh.SetVertices(vertices);
         mesh.SetIndices(indices.ToArray(), MeshTopology.Quads, 0);

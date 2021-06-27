@@ -79,6 +79,7 @@ public class DebugManager : MonoBehaviour
             new Vector2(0, 1),
             new Vector2(-1, 1),
             new Vector2(-1, 0),
+            new Vector2(0, 0),
         };
         _A = curve;
         _F = profile;

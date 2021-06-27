@@ -5,6 +5,7 @@ public enum Mode
 {
     EDIT = 0,
     CREATION = 1,
+    PROFILECREATION = 2,
 }
 
 public class MenuManager : MonoBehaviour

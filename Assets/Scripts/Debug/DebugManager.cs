@@ -14,6 +14,7 @@ public class DebugManager : MonoBehaviour
     [SerializeField] private bool _showDebugProfileExtruded = true;
 
     private List<Vector3> _vertices = new List<Vector3>();
+    private List<Vector3> _normales = new List<Vector3>();
 
     private void Awake()
     {
@@ -37,15 +38,15 @@ public class DebugManager : MonoBehaviour
         }
     }
 
-    public void Extrude(BezierCurve curve)
+    public void Extrude(BezierCurve curve, Vector2[] profile)
     {
-        Vector2[] profile = new Vector2[]
+        /*Vector2[] profile = new Vector2[]
         {
             new Vector2(0, 0),
             new Vector2(0, 1),
             new Vector2(-1, 1),
             new Vector2(-1, 0),
-        };
+        };*/
 
         this._vertices = this._extrusionManager.ExtrudeByPath(profile, curve);
         this._meshDisplayer.Display(this._vertices.ToArray(), profile.Length);

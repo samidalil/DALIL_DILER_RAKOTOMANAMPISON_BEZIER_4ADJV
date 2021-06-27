@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BezierManager : MonoBehaviour
@@ -27,17 +28,19 @@ public class BezierManager : MonoBehaviour
     [SerializeField] private GameObject _curvePrefab = null;
 
     [SerializeField] private GameObject _pointPrefab = null;
+    [SerializeField] private GameObject _profilePointPrefab = null;
 
     #endregion
 
     #region Variables d'instance
-
+    private int _profilePointNumber;
     private BezierCurve _currentCurve = null;
-
+    private List<Vector2> _currentProfile = new List<Vector2>();
     private MouseController _mouseController;
 
     private MenuManager _menuManager;
 
+    private ProfileMenuManager _profileMenuManager;
     private EditMenuManager _editMenuManager;
 
     public EditMenuManager EditMenuManager
@@ -52,7 +55,18 @@ public class BezierManager : MonoBehaviour
 
     #region Propriétés
 
-   
+    public int ProfilePointNumber
+    {
+        get => _profilePointNumber;
+        set => _profilePointNumber = value;
+    }
+
+
+    public List<Vector2> CurrentProfile
+    {
+        get => _currentProfile;
+        set => _currentProfile = value;
+    }
 
     public BezierCurve CurrentCurve
     {
@@ -76,6 +90,12 @@ public class BezierManager : MonoBehaviour
         set => _menuManager = value;
     }
 
+    public ProfileMenuManager ProfileMenuManager
+    {
+        get => _profileMenuManager;
+        set => _profileMenuManager = value;
+    }
+
     public List<BezierCurve> Curves => this._curves;
 
     #endregion
@@ -96,6 +116,18 @@ public class BezierManager : MonoBehaviour
         return point;
     }
 
+    public void CreatePointProfile(Vector3 position)
+    {
+        GameObject.Instantiate(
+            this._profilePointPrefab,
+            Camera.main.ScreenToWorldPoint(position),
+            Quaternion.identity
+        );
+
+        this._currentProfile.Add(new Vector2(position.x, position.y));
+
+    }
+
     public BezierCurve CreateCurve(int degree)
     {
         this._currentCurve = GameObject.Instantiate(
@@ -108,6 +140,7 @@ public class BezierManager : MonoBehaviour
 
         return this._currentCurve;
     }
+    
 
     public void ExtendCurve(BezierCurve originCurve, ExtendStrategy strategy)
     {

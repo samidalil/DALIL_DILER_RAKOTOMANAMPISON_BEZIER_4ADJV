@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Neffros\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -8,7 +8,12 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="BezierManager.cs" t="Include" />
+          <e p="Debug" t="Include">
+            <e p="DebugManager.cs" t="Include" />
+          </e>
           <e p="DragableObject.cs" t="Include" />
+          <e p="Extrusion.cs" t="Include" />
+          <e p="MeshDisplayer.cs" t="Include" />
           <e p="Pixel Rendering" t="Include">
             <e p="BezierCurve.cs" t="Include" />
             <e p="MouseController.cs" t="Include" />
@@ -16,6 +21,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="EditMenuManager.cs" t="Include" />
+            <e p="ExtendMenu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
           </e>
         </e>

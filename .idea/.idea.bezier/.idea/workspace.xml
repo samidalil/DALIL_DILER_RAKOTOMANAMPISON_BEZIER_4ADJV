@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6299903e-0d4d-470a-b41b-24f971071f47" name="Default Changelist" comment="" />
@@ -31,8 +31,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BezierManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DragableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Debug/DebugManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Extrusion.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,6 +48,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugManager.cs" />
       </list>
     </option>
   </component>
@@ -75,10 +80,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="20292">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="20292" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -94,6 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620986841890</updated>
       <workItem from="1620986864685" duration="32914000" />
+      <workItem from="1624783168242" duration="6986000" />
     </task>
     <servers />
   </component>
@@ -107,7 +113,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -123,6 +131,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" initialLine="18">
+            <startOffsets>
+              <option value="470" />
+            </startOffsets>
+            <endOffsets>
+              <option value="471" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

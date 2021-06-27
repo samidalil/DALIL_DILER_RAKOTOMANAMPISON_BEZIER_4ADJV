@@ -16,22 +16,20 @@ public class MeshDisplayer : MonoBehaviour
 
         List<int> indices = new List<int>();
 
-        for (int i = 0; i < profileLength; i++)
+        for (int i = 0; i < profileLength - 1; i++)
         {
             for (int j = 0; j < bezierLength - 1; j++)
             {
-                int moduloI = (i + 1) % profileLength;
-
                 // Front face
                 indices.Add(i + j * profileLength);
                 indices.Add(i + (j + 1) * profileLength);
-                indices.Add(moduloI + (j + 1) * profileLength);
-                indices.Add(moduloI + j * profileLength);
+                indices.Add((i + 1) + (j + 1) * profileLength);
+                indices.Add((i + 1) + j * profileLength);
 
                 // Back face
                 indices.Add(i + j * profileLength);
-                indices.Add(moduloI + j * profileLength);
-                indices.Add(moduloI + (j + 1) * profileLength);
+                indices.Add((i + 1) + j * profileLength);
+                indices.Add((i + 1) + (j + 1) * profileLength);
                 indices.Add(i + (j + 1) * profileLength);
             }
         }

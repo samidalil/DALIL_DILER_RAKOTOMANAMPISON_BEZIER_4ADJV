@@ -16,6 +16,7 @@ public class DebugManager : MonoBehaviour
     private BezierCurve _A = null;
 
     private List<Vector3> _vertices = new List<Vector3>();
+    private List<Vector3> _normales = new List<Vector3>();
 
     private void Awake()
     {
@@ -83,9 +84,9 @@ public class DebugManager : MonoBehaviour
         };
         _A = curve;
         _F = profile;
-        this._vertices = this._extrusionManager.ExtrudeByPath(profile, curve);
+         this._extrusionManager.ExtrudeByPath(profile, curve,out _vertices,out _normales);
             
         Debug.Log("finished");
-        this._meshDisplayer.Display(this._vertices.ToArray(), profile.Length);
+        this._meshDisplayer.Display(this._vertices.ToArray(),this._normales.ToArray(), profile.Length);
     }
 }

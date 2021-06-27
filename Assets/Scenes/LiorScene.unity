@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603831132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6595, y: 0.016000003, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -835,6 +835,9 @@ MonoBehaviour:
   _radius: 0.05
   _extrusionManager: {fileID: 1808771747}
   _meshDisplayer: {fileID: 603831135}
+  _showDebugPlaneTransform: 1
+  _showDebugProfile: 1
+  _showDebugProfileExtruded: 1
 --- !u!4 &2061444155
 Transform:
   m_ObjectHideFlags: 0

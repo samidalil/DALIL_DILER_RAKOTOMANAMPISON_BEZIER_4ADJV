@@ -42,19 +42,17 @@ public class Extrusion : MonoBehaviour
         List<Vector3> vertices = new List<Vector3>();
         //   Vector3 originPoint = Vector3.zero;
         // Vector3 P_v = curve.gameObject.transform.right.normalized; // abscisse du repere dans lequelle s'inscrit le plan
-        Vector3 P_v = new Vector3(0, 0, 1).normalized; // abscisse du repere dans lequelle s'inscrit le plan
+        Vector3 P_v = Vector3.forward; // abscisse du repere dans lequelle s'inscrit le plan
 
         for (int i = 0; i < curve.Positions.Count; i++)
         {
-            Vector3
-                P_normal = this.GetNormalizedTangent(curve, i)
-                    .normalized; // normal au plan P <=> tangente normalise au point A(t) 
+            Vector3 P_normal = this.GetNormalizedTangent(curve, i); // normal au plan P <=> tangente normalise au point A(t) 
             Vector3 P_u = Vector3.Cross(P_normal, P_v).normalized; // ordonnee du repère dans lequelle s'inscrit le plan
-             foreach (Vector3 point in profile)
+            foreach (Vector3 point in profile)
             {
                 Vector3 dx = point.x * P_u;
                 Vector3 dy = point.y * P_v;
- 
+
                 // sigma(s,t) = A(t) + Xf(s)*v + Yf(s)*k 
                 // ou A(t) est le point de la bézier à l'indice t
                 // et ( Xf(s), Yf(s) ) sont les coordonee du point F(s) appartenant au profile

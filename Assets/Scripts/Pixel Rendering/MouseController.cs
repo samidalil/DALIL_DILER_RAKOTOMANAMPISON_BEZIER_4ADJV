@@ -56,8 +56,20 @@ public class MouseController : MonoBehaviour
                     BezierManager.Instance.CreatePointInCurve(position);
                     if (BezierManager.Instance.CurrentCurve.Points.Count == BezierManager.Instance.CurrentCurve.Degree + 1)
                     {
+                        
                         BezierManager.Instance.MenuManager.SwitchToEditMode();
-                        DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve);
+                        ProfileMenuManager.Instance.ActivateMenu();
+                    }
+                }
+                else if (_menuManager.Mode == Mode.PROFILECREATION)
+                {
+                    position.z = 2;
+                    BezierManager.Instance.CreatePointProfile(position);
+                    if (BezierManager.Instance.CurrentProfile.Count == BezierManager.Instance.ProfilePointNumber)
+                    {
+
+                        BezierManager.Instance.MenuManager.SwitchToEditMode();
+                        DebugManager.Instance.Extrude(BezierManager.Instance.CurrentCurve, BezierManager.Instance.CurrentProfile.ToArray());
                     }
                 }
                 else

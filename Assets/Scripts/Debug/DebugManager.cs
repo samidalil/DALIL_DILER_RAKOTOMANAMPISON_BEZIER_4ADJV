@@ -72,16 +72,18 @@ public class DebugManager : MonoBehaviour
         return new Vector3(Mathf.Abs(v.x), Mathf.Abs(v.y), Mathf.Abs(v.z));
     }
 
-    public void Extrude(BezierCurve curve)
+    public void Extrude(BezierCurve curve, Vector2[] profile)
     {
-        Vector2[] profile = new Vector2[]
+        /*Vector2[] profile = new Vector2[]
         {
             new Vector2(0, 0),
             new Vector2(0, 1),
             new Vector2(-1, 1),
             new Vector2(-1, 0),
             new Vector2(0, 0),
-        };
+        };*/
+        
+        
         _A = curve;
         _F = profile;
          this._extrusionManager.ExtrudeByPath(profile, curve,out _vertices,out _normales);

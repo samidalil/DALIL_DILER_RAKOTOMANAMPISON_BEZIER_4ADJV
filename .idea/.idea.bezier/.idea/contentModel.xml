@@ -23,6 +23,7 @@
             <e p="EditMenuManager.cs" t="Include" />
             <e p="ExtendMenu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
+            <e p="ProfileMenuManager.cs" t="Include" />
           </e>
         </e>
       </e>

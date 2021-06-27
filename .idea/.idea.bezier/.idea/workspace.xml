@@ -29,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/Point.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ProfileMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BezierManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DragableObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,13 +44,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIElement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/Point.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DragableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BezierManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EditMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/BezierCurve.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Debug/DebugManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pixel Rendering/MouseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProfileMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BezierManager.cs" />
       </list>
     </option>
   </component>
@@ -99,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620986841890</updated>
       <workItem from="1620986864685" duration="32914000" />
-      <workItem from="1624783168242" duration="6986000" />
+      <workItem from="1624783168242" duration="14021000" />
     </task>
     <servers />
   </component>
@@ -131,19 +133,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/MeshDisplayer.cs" initialLine="18">
-            <startOffsets>
-              <option value="470" />
-            </startOffsets>
-            <endOffsets>
-              <option value="471" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
